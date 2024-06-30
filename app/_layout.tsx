@@ -13,8 +13,19 @@ export default function RootLayout() {
   const [loaded] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
   });
+  
+  const router = useRouter()
+  // Uncomment to simulate missing back button issue.
+  // Simulate Push Notification Response
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      router.push('flights/123')
+    }, 1000)
 
-  const router = useRouter();
+    return () => {
+      clearTimeout(timeout)
+    }
+  }, [])
 
   useEffect(() => {
     if (loaded) {
@@ -25,12 +36,6 @@ export default function RootLayout() {
   if (!loaded) {
     return null;
   }
-
-  // Uncomment to simulate missing back button issue.
-  // Simulate Push Notification Response
-  useEffect(() => {
-    router.push('/flights/123')
-  }, [])
 
   return (
       <GestureHandlerRootView style={{ flex: 1 }}>
