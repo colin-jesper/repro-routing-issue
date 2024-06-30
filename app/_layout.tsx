@@ -28,9 +28,9 @@ export default function RootLayout() {
 
   // Uncomment to simulate missing back button issue.
   // Simulate Push Notification Response
-  // useEffect(() => {
-  //   router.push('/flights/123')
-  // }, [])
+  useEffect(() => {
+    router.push('/flights/123')
+  }, [])
 
   return (
       <GestureHandlerRootView style={{ flex: 1 }}>
