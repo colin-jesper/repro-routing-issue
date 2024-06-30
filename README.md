@@ -10,4 +10,4 @@ This is apparently a very common issue with a simple solution - it's even highli
 
 I am not too familiar with expo-router so I am not sure how to use the solution suggested in the docs as not much detail is give.
 
-Note: I am not looking to hard code a back button...
+Note: I am not looking to hard code a back button... Nor do I want to navigate twice as this only works when wrapped in a the `setTimeout` which is a hack for an issue I had "Attempted to navigate before root layout component was mounted".
